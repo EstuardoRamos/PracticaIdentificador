@@ -10,6 +10,17 @@ package practicaidentificador;
  * 
  * @author Estuardo Ramos
  */
-public class TipoDeDato {
+public enum TipoDeDato {
+    NUMERO("Es un numero"),
+    ID("Es un ID"),
+    CARACTER("Es un caracter");
+    
+    private String tipo;
+
+    private TipoDeDato(String tipo) {
+        this.tipo = tipo;
+    }
+    
+    
 
 }

@@ -22,26 +22,31 @@ public class Ventana extends javax.swing.JFrame {
         String palabra=cadena.getText();
         int num = palabra.length();
          char car[]=palabra.toCharArray();
-         
+         int ini=0;
+         int fin = 0;
          for (int i = 0; i < num; i++) {
-             int ini=0;
-             int fin;
-             if(Character.isSpaceChar(car[i])){
+             
+             
+             int aux;
+             if(Character.isSpaceChar(car[i]) || i==num-1){
                  fin=i;
-                 int aux;
-                 for (int j = ini; j < fin; j++) {
+                 for (int j = ini; j < fin+1; j++) {
                      cua2.append(car[j]+"");
                  }
-                 if (Character.isLetter(car[ini])) {
+                 if (Character.isLetter(car[ini+1])) {
                      cua2.append(" Es un id");
-                 } else if (Character.isDigit(car[ini])) {
+                 } else if (Character.isDigit(car[ini+1])) {
                      cua2.append(" Es un numero");
                      
                  } else{
                      cua2.append(" Es un caracter");
                  }
                  cua2.append("\n");
+                 aux=fin;
+                 ini=aux;
              }
+             aux=fin;
+             ini=aux;
              if (Character.isLetter(car[i])){
                  System.out.println(car[i]+" Es un id"+"\n");
                  clasi.append(car[i]+" Es un id"+"\n");
